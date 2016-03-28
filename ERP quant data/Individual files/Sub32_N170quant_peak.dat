@@ -1,0 +1,17 @@
+Source File	Sweep Number	Channel	Marker	Latency	Amplitude
+Sub32_Black_eyes.avg	1	P8/T6	N170	149.000000	-2.153785
+Sub32_Black_eyes.avg	1	TP7	N170	140.000000	-3.309402
+Sub32_Black_eyes.avg	1	TP8	N170	155.000000	-0.889736
+Sub32_Black_eyes.avg	1	P7/T5	N170	141.000000	-7.646679
+Sub32_Black_fore.avg	1	P8/T6	N170	143.000000	-0.974085
+Sub32_Black_fore.avg	1	TP7	N170	147.000000	-1.890786
+Sub32_Black_fore.avg	1	TP8	N170	141.000000	-0.281179
+Sub32_Black_fore.avg	1	P7/T5	N170	144.000000	-5.141560
+Sub32_White_eyes.avg	1	P8/T6	N170	149.000000	-1.498238
+Sub32_White_eyes.avg	1	TP7	N170	156.000000	-0.712660
+Sub32_White_eyes.avg	1	TP8	N170	146.000000	-1.060736
+Sub32_White_eyes.avg	1	P7/T5	N170	146.000000	-4.091607
+Sub32_White_fore.avg	1	P8/T6	N170	148.000000	0.827854
+Sub32_White_fore.avg	1	TP7	N170	144.000000	-0.523454
+Sub32_White_fore.avg	1	TP8	N170	159.000000	0.769534
+Sub32_White_fore.avg	1	P7/T5	N170	144.000000	-3.674135
