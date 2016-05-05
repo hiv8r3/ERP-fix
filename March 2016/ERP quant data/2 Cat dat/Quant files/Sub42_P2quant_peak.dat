@@ -1,0 +1,13 @@
+Source File	Sweep Number	Channel	Marker	Latency	Amplitude
+Sub42_Black_eyes.avg	1	CZ	P2	176.000000	2.229963
+Sub42_Black_eyes.avg	1	CPZ	P2	182.000000	0.650073
+Sub42_Black_eyes.avg	1	PZ	P2	189.000000	0.801934
+Sub42_Black_fore.avg	1	CZ	P2	177.000000	2.243284
+Sub42_Black_fore.avg	1	CPZ	P2	189.000000	0.908503
+Sub42_Black_fore.avg	1	PZ	P2	189.000000	0.500876
+Sub42_White_eyes.avg	1	CZ	P2	146.000000	2.430979
+Sub42_White_eyes.avg	1	CPZ	P2	144.000000	2.422587
+Sub42_White_eyes.avg	1	PZ	P2	141.000000	2.523295
+Sub42_White_fore.avg	1	CZ	P2	145.000000	1.793029
+Sub42_White_fore.avg	1	CPZ	P2	141.000000	0.809927
+Sub42_White_fore.avg	1	PZ	P2	139.000000	1.401387
