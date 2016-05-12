@@ -1,0 +1,17 @@
+Source File	Sweep Number	Channel	Marker	Latency	Amplitude
+Sub40_Black_eyes.avg	1	P8/T6	N170	189.000000	1.439103
+Sub40_Black_eyes.avg	1	TP7	N170	130.000000	-0.998323
+Sub40_Black_eyes.avg	1	TP8	N170	190.000000	0.847991
+Sub40_Black_eyes.avg	1	P7/T5	N170	130.000000	-0.121142
+Sub40_Black_fore.avg	1	P8/T6	N170	171.000000	-0.539619
+Sub40_Black_fore.avg	1	TP7	N170	183.000000	-0.712172
+Sub40_Black_fore.avg	1	TP8	N170	173.000000	-0.323144
+Sub40_Black_fore.avg	1	P7/T5	N170	182.000000	0.006275
+Sub40_White_eyes.avg	1	P8/T6	N170	171.000000	0.687073
+Sub40_White_eyes.avg	1	TP7	N170	130.000000	-2.031415
+Sub40_White_eyes.avg	1	TP8	N170	130.000000	0.263535
+Sub40_White_eyes.avg	1	P7/T5	N170	130.000000	-1.132573
+Sub40_White_fore.avg	1	P8/T6	N170	168.000000	1.594543
+Sub40_White_fore.avg	1	TP7	N170	130.000000	-0.061329
+Sub40_White_fore.avg	1	TP8	N170	172.000000	1.028061
+Sub40_White_fore.avg	1	P7/T5	N170	130.000000	2.598396

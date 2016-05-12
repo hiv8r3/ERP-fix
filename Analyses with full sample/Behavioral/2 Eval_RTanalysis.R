@@ -106,8 +106,9 @@ require(lmerTest)
 # intercept-only model
 
 # no predictors- look at how intercept varies by face stimulus, word stimulus, and subject
-m1 <- lmer(TargetWord.RT ~ 1 + (1|PrimePic) +(1|TargetWord) + (1|Subject) , data=corTrials) 
+m1 <- lmer(TargetWord.RT ~ 1 + (1|PrimePic) +(1|TargetWord) + (1|Subject), data=corTrials) 
 summary(m1)
+m1a <- lmer(TargetWord.RT ~ 1 + (1|PrimePic) +(1|TargetWord) + (1|Subject) , data=corTrials, REML =F) 
 
 # investigate whether random effects of each are different from 0
 m2a <- lmer(TargetWord.RT ~ 1 + (1|TargetWord) + (1|Subject), data=corTrials)
@@ -118,6 +119,13 @@ anova(m1, m2b) # leave in TargetWord as random effect
 
 m2c <- lmer(TargetWord.RT ~ 1 + (1|TargetWord) + (1|PrimePic), data=corTrials)
 anova(m1, m2c) # should leave subject in as random effect
+
+# sink("./Analyses with full sample/Model outputs/1 Behavioral_Eval_interceptOnly.txt")
+# summary(m1)
+# coef(m1)
+# summary(m1a)$AICtab
+# sink()
+
 
 # next step: include fixed effects (ie trial condition)
 
@@ -142,38 +150,40 @@ m5a = lmer(TargetWord.RT ~ faceRace * wordVal * FixArea +
 
 # Write output to separate file
 # sink("./Analyses with full sample/Model outputs/1.2 Behavioral_Eval_maximalModelwithoutInteractions.txt")
+# "lmer(TargetWord.RT ~ faceRace * wordVal * FixArea + (faceRace + wordVal + FixArea|Subject) + (faceRace + wordVal + FixArea|TargetWord), data=corTrials)"
 # "Doesn't converge"
 # summary(m5)
 # coef(m5)
 # summary(m5a)$AICtab
 # sink()
 
-# let wordVal slope vary by both groups
+# take out random slopes for target words
 m6 = lmer(TargetWord.RT ~ faceRace * wordVal * FixArea + 
-          (wordVal|Subject) + 
-          (wordVal|TargetWord), data=corTrials)
-summary(m6)
-m6a = lmer(TargetWord.RT ~ faceRace * wordVal * FixArea + # doesn't converge
-            (wordVal|Subject) + 
-            (wordVal|TargetWord), data=corTrials, REML = F)
-
-# sink("./Analyses with full sample/Model outputs/1.3 Behavioral_Eval_ValenceRandom.txt")
-# summary(m6)
-# coef(m6)
-# summary(m6a)$AICtab #not included
-# sink()
-
-# take out some of the random slopes for target words
-m7 = lmer(TargetWord.RT ~ faceRace * wordVal * FixArea + 
             (faceRace + wordVal + FixArea|Subject) + 
             (1|TargetWord), data=corTrials)
-summary(m7)
-m7a = lmer(TargetWord.RT ~ faceRace * wordVal * FixArea + 
+summary(m6)
+m6a = lmer(TargetWord.RT ~ faceRace * wordVal * FixArea + 
              (faceRace + wordVal + FixArea|Subject) + 
              (1|TargetWord), data=corTrials, REML = F)
 
-# sink("./Analyses with full sample/Model outputs/1.4 Behavioral_Eval_allRandomSlopesForSubjectOnly.txt")
+# sink("./Analyses with full sample/Model outputs/1.3 Behavioral_Eval_allRandomSlopesForSubjectOnly.txt")
+# summary(m6)
+# coef(m6)
+# summary(m6a)$AICtab
+# sink()
+
+# let wordVal slope vary by both groups
+m7 = lmer(TargetWord.RT ~ faceRace * wordVal * FixArea + 
+          (wordVal|Subject) + 
+          (wordVal|TargetWord), data=corTrials)
+summary(m7)
+m7a = lmer(TargetWord.RT ~ faceRace * wordVal * FixArea + # doesn't converge
+            (wordVal|Subject) + 
+            (wordVal|TargetWord), data=corTrials, REML = F)
+
+# sink("./Analyses with full sample/Model outputs/1.4 Behavioral_Eval_ValenceRandom.txt")
 # summary(m7)
 # coef(m7)
-# summary(m7a)$AICtab
+# summary(m7a)$AICtab #not included
 # sink()
+

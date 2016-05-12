@@ -89,3 +89,29 @@ catDat$TargetFace.ACC[catDat$responseAccDat == 3] = 0
 
 write.table(evalDat, "./Analyses with full sample/Behavioral/evalDat.txt", sep = "\t", row.names = F)
 write.table(catDat, "./Analyses with full sample/Behavioral/catDat.txt", sep = "\t", row.names = F)
+
+
+
+
+
+
+#### Calculate demographic info of sample
+
+# Gender
+length(unique(dat$Subject[dat$DemoGender.RESP == 1])) # female
+length(unique(dat$Subject[dat$DemoGender.RESP == 2])) # male
+length(unique(dat$Subject[dat$DemoGender.RESP == 3])) # other
+
+# Race
+length(unique(dat$Subject[dat$DemoRace.RESP == 1])) # American Indian / Alaska native
+length(unique(dat$Subject[dat$DemoRace.RESP == 2])) # Asian
+length(unique(dat$Subject[dat$DemoRace.RESP == 3])) # Native Hawaiian or other Pacific Islander
+length(unique(dat$Subject[dat$DemoRace.RESP == 4])) # Black or African American
+length(unique(dat$Subject[dat$DemoRace.RESP == 5])) # White
+length(unique(dat$Subject[dat$DemoRace.RESP == 6])) # More than one race
+length(unique(dat$Subject[dat$DemoRace.RESP == 7])) # Unknown or choose not to answer
+
+# Ethnicity
+length(unique(dat$Subject[dat$DemoEthnicity.RESP == 1])) # Hispanic or Latino
+length(unique(dat$Subject[dat$DemoEthnicity.RESP == 2])) # Not Hispanic or Latino
+length(unique(dat$Subject[dat$DemoEthnicity.RESP == 3])) # Other or choose not to answer

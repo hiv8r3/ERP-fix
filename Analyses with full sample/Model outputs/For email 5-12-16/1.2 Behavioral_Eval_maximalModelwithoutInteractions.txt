@@ -1,0 +1,2 @@
+[1] "lmer(TargetWord.RT ~ faceRace * wordVal * FixArea + (faceRace + wordVal + FixArea|Subject) + (faceRace + wordVal + FixArea|TargetWord), data=corTrials)"
+[1] "Doesn't converge"

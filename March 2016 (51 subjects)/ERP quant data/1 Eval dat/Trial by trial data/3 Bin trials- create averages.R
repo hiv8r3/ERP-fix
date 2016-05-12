@@ -43,7 +43,7 @@ for (k in 1:numSubjects) {
   # interest for each electrode, for each bin, for each condition
   BinningInfoSub = NULL # will be text file with number of trials and bins per condition for each subject
   
-  # read in trial-by-trial point data
+  # read in trial-by-trial point data (smaller file with just points within interval of interest)
   temp = read.delim(paste(path, "Eval_Sub", k, "_TBT.dat", sep=""), skip=2, header=FALSE, colClasses = "numeric") 
   names(temp) = elec # replace column names
   temp = temp[,1:length(elec)] # get rid of last NA column
