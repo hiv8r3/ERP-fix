@@ -1,0 +1,28 @@
+[1] "aov(AvgAmp ~ faceRace*FixArea + Error(Subject/(faceRace*FixArea)), data = select)"
+
+Error: Subject
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 64  12322   192.5               
+
+Error: Subject:faceRace
+          Df Sum Sq Mean Sq F value   Pr(>F)    
+faceRace   1  473.1   473.1   36.18 9.54e-08 ***
+Residuals 64  836.9    13.1                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Error: Subject:FixArea
+          Df Sum Sq Mean Sq F value  Pr(>F)   
+FixArea    1  127.4  127.38   9.288 0.00335 **
+Residuals 64  877.7   13.71                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Error: Subject:faceRace:FixArea
+                 Df Sum Sq Mean Sq F value Pr(>F)
+faceRace:FixArea  1   28.0   27.99   2.042  0.158
+Residuals        64  877.2   13.71               
+
+Error: Within
+            Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 1560   1726   1.106               

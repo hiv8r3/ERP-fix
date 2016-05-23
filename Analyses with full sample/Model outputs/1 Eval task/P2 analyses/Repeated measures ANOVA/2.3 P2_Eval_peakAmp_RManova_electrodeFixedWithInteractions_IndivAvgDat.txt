@@ -1,0 +1,52 @@
+[1] "aov(PeakAmp ~ faceRace*FixArea*Electrode + Error(Subject/(faceRace*FixArea*Electrode)), data = select) "
+
+Error: Subject
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 64  16448     257               
+
+Error: Subject:faceRace
+          Df Sum Sq Mean Sq F value   Pr(>F)    
+faceRace   1  453.5   453.5   64.93 2.55e-11 ***
+Residuals 64  447.0     7.0                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Error: Subject:FixArea
+          Df Sum Sq Mean Sq F value  Pr(>F)   
+FixArea    1  196.8  196.85   10.45 0.00194 **
+Residuals 64 1205.3   18.83                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Error: Subject:Electrode
+           Df Sum Sq Mean Sq F value   Pr(>F)    
+Electrode   6  306.4   51.07   14.83 2.87e-15 ***
+Residuals 384 1322.0    3.44                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Error: Subject:faceRace:FixArea
+                 Df Sum Sq Mean Sq F value Pr(>F)
+faceRace:FixArea  1    7.3   7.312   1.293   0.26
+Residuals        64  361.8   5.653               
+
+Error: Subject:faceRace:Electrode
+                    Df Sum Sq Mean Sq F value  Pr(>F)    
+faceRace:Electrode   6  10.39  1.7315   6.596 1.2e-06 ***
+Residuals          384 100.81  0.2625                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Error: Subject:FixArea:Electrode
+                   Df Sum Sq Mean Sq F value  Pr(>F)    
+FixArea:Electrode   6  14.11  2.3521   4.866 8.3e-05 ***
+Residuals         384 185.61  0.4834                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Error: Subject:faceRace:FixArea:Electrode
+                            Df Sum Sq Mean Sq F value Pr(>F)  
+faceRace:FixArea:Electrode   6   2.91  0.4849   2.591 0.0179 *
+Residuals                  384  71.87  0.1872                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

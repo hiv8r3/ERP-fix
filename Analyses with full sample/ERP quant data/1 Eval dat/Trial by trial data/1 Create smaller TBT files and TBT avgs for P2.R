@@ -31,7 +31,6 @@ intBegin = NA
 intEnd = NA
 
 NumAcceptedTrials = NULL # will become file that has how many trials were accepted for each subject
-### After this point, the only thing you should have to modify from study to study is paths and filenames
 
 ## Sample filenames:
 
