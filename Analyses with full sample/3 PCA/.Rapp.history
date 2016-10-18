@@ -1,0 +1,141 @@
+i = 1
+dat = read.delim(paste("./Documents/Projects/ERP-fix/For PCA/2 Modified in R/Sub", i, "_", k, 		"_exportForPCA_mod.txt", sep=""))
+for (k in condList) {#
+		dat = read.delim(paste("./Documents/Projects/ERP-fix/For PCA/2 Modified in R/Sub", i, "_", k, 								"_exportForPCA_mod.txt", sep=""))#
+	}
+condList = c("BF", "BE", "WF", "WE")
+for (k in condList) {#
+		dat = read.delim(paste("./Documents/Projects/ERP-fix/For PCA/2 Modified in R/Sub", i, "_", k, 								"_exportForPCA_mod.txt", sep=""))#
+	}
+for (k in condList) {
+dat = read.delim(paste("./Documents/Projects/ERP-fix/For PCA/2 Modified in R/Sub", i, "_", k, 								"_exportForPCA_mod.txt", sep=""))
+}
+?if
+for (k in condList) {#
+	dat = read.delim(paste("./Documents/Projects/ERP-fix/For PCA/1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), 				header = F, skip = 16)#
+	names(dat) = elec#
+	dat2 = dat[,1:23]#
+	# for subjects 1-9, add 0 for first digit to keep # of digits the same#
+	if (i < 10) {#
+		write.table(dat2, paste("./Documents/Projects/ERP-fix/For PCA/2 Modified in R/Sub0", i, "_", k, 		"_exportForPCA_mod.txt", sep=""), 			sep = "\t", row.names = F)#
+	} else {#
+		write.table(dat2, paste("./Documents/Projects/ERP-fix/For PCA/2 Modified in R/Sub", i, "_", k, 		"_exportForPCA_mod.txt", sep=""), 			sep = "\t", row.names = F)#
+	}	#
+	}
+i = 1
+k = "BF"
+dat = read.delim(paste("./Documents/Projects/ERP-fix/For PCA/1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)
+dat = read.delim(paste("./Users/Hannah/Documents/Projects/ERP-fix/For PCA/1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)
+dat = read.delim(paste("../Documents/Projects/ERP-fix/For PCA/1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)
+k = "WE"
+dat = read.delim(paste("../Documents/Projects/ERP-fix/For PCA/1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)
+dat = read.delim("../Documents/Projects/ERP-fix/For PCA/1 Input files from SCAN/Sub1_BE_exportForPCA.txt", header = F, skip = 16)
+pwd
+source
+setwd("./Documents/Projects/ERP-fix")
+setwd("./Documents/Projects/ERP-fix/")
+path = "./Documents/Projects/ERP-fix/"
+path = "./Documents/Projects/ERP-fix/For PCA/"
+i = 1
+k = "B"
+k = "BE"
+dat = read.delim(paste(path, "1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)
+dat = read.delim(paste(path, "Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)
+path = "../Documents/Projects/ERP-fix/For PCA/"
+dat = read.delim(paste(path, "Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)
+getwd
+setwd("C:/Users/Hannah")
+setwd("C:/Users/Hannah/")
+~/Documents/Projects/ERP-fix/For PCA
+path = "~/Documents/Projects/ERP-fix/For PCA/"
+dat = read.delim(paste(path, "Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)
+dat = read.delim("../Documents/Projects/ERP-fix/For PCA/1 Input files from SCAN/Sub1_BE_exportForPCA.txt", header = F, skip = 16)
+dat = read.delim(paste(path, "1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)
+head(dat)
+names(dat) = elec#
+	dat2 = dat[,1:23]#
+	# for subjects 1-9, add 0 for first digit to keep # of digits the same#
+	if (i < 10) {#
+		write.table(dat2, paste("./Documents/Projects/ERP-fix/For PCA/2 Modified in R/Sub0", i, "_", k, 		"_exportForPCA_mod.txt", sep=""), 			sep = "\t", row.names = F)#
+	} else {#
+		write.table(dat2, paste("./Documents/Projects/ERP-fix/For PCA/2 Modified in R/Sub", i, "_", k, 		"_exportForPCA_mod.txt", sep=""), 			sep = "\t", row.names = F)#
+	}	#
+	}
+path = "~/Documents/Projects/ERP-fix/For PCA/"#
+# modifies files exported from Scan to put into matlab for PCA#
+#
+elec = c("FZ", "FC3", "FCZ", "FC4", "C3", "CZ", "C4", "CP3", "CPZ", "CP4", "P3", "PZ", "P4",#
+			"OZ", "FP1", "FP2", "A2", "P8", "TP7", "TP8", "P7", "VEOG", "HEOG", "Nose")#
+#
+condList = c("BF", "BE", "WF", "WE")
+i = 1
+for (k in condList) {#
+	dat = read.delim(paste(path, "1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)#
+	names(dat) = elec#
+	dat2 = dat[,1:23]#
+	# for subjects 1-9, add 0 for first digit to keep # of digits the same#
+	if (i < 10) {#
+		write.table(dat2, paste("./Documents/Projects/ERP-fix/For PCA/2 Modified in R/Sub0", i, "_", k, 		"_exportForPCA_mod.txt", sep=""), 			sep = "\t", row.names = F)#
+	} else {#
+		write.table(dat2, paste("./Documents/Projects/ERP-fix/For PCA/2 Modified in R/Sub", i, "_", k, 		"_exportForPCA_mod.txt", sep=""), 			sep = "\t", row.names = F)#
+	}	#
+	}
+dat = read.delim(paste(path, "1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)
+k
+for (k in condList) {#
+	dat = read.delim(paste(path, "1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)#
+	names(dat) = elec#
+	dat2 = dat[,1:23]#
+	# for subjects 1-9, add 0 for first digit to keep # of digits the same#
+	if (i < 10) {#
+		write.table(dat2, paste(path, "2 Modified in R/Sub0", i, "_", k, 		"_exportForPCA_mod.txt", sep=""), 			sep = "\t", row.names = F)#
+	} else {#
+		write.table(dat2, paste(path, "2 Modified in R/Sub", i, "_", k, 		"_exportForPCA_mod.txt", sep=""), 			sep = "\t", row.names = F)#
+	}	#
+	}
+path = "~/Documents/Projects/ERP-fix/For PCA/"#
+# modifies files exported from Scan to put into matlab for PCA#
+#
+elec = c("FZ", "FC3", "FCZ", "FC4", "C3", "CZ", "C4", "CP3", "CPZ", "CP4", "P3", "PZ", "P4",#
+			"OZ", "FP1", "FP2", "A2", "P8", "TP7", "TP8", "P7", "VEOG", "HEOG", "Nose")#
+#
+condList = c("BF", "BE", "WF", "WE")	#
+#
+for (i in c(1:64, 66)) {#
+	for (k in condList) {#
+	dat = read.delim(paste(path, "1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)#
+	names(dat) = elec#
+	dat2 = dat[,1:23]#
+	# for subjects 1-9, add 0 for first digit to keep # of digits the same#
+	if (i < 10) {#
+		write.table(dat2, paste(path, "2 Modified in R/Sub0", i, "_", k, 		"_exportForPCA_mod.txt", sep=""), 			sep = "\t", row.names = F)#
+	} else {#
+		write.table(dat2, paste(path, "2 Modified in R/Sub", i, "_", k, 		"_exportForPCA_mod.txt", sep=""), 			sep = "\t", row.names = F)#
+	}	#
+	}#
+}
+i = 1
+k = "BE"
+dat = read.delim(paste(path, "1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)
+path = "~/Documents/Projects/ERP-fix/For PCA/"
+elec = c("FZ", "FC3", "FCZ", "FC4", "C3", "CZ", "C4", "CP3", "CPZ", "CP4", "P3", "PZ", "P4",
+"OZ", "FP1", "FP2", "A2", "P8", "TP7", "TP8", "P7", "VEOG", "HEOG", "Nose")
+condList = c("BF", "BE", "WF", "WE")
+dat = read.delim(paste(path, "1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)
+names(dat) = elec
+head(dat)
+dat2 = dat[,1:21]
+head(dat2)
+for (i in c(1:64, 66)) {#
+	for (k in condList) {#
+	dat = read.delim(paste(path, "1 Input files from SCAN/Sub", i, "_", k, "_exportForPCA.txt", sep=""), header = F, skip = 16)#
+	names(dat) = elec#
+	dat2 = dat[,1:21]#
+	# for subjects 1-9, add 0 for first digit to keep # of digits the same#
+	if (i < 10) {#
+		write.table(dat2, paste(path, "2 Modified in R/Sub0", i, "_", k, 		"_exportForPCA_noEOG.txt", sep=""), 			sep = "\t", row.names = F)#
+	} else {#
+		write.table(dat2, paste(path, "2 Modified in R/Sub", i, "_", k, 		"_exportForPCA_noEOG.txt", sep=""), 			sep = "\t", row.names = F)#
+	}	#
+	}#
+}
