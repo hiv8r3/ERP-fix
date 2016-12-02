@@ -34,9 +34,9 @@ alldat$Fix_effect = -1 # for eyes
 alldat$Fix_effect[alldat$Fix == "fore"] = 1
 
 # make component a continuous variable
-alldat$Comp_cont = 1
-alldat$Comp_cont[alldat$Component == "VT2"] = 2
-alldat$Comp_cont[alldat$Component == "VT3"] = 3
+alldat$Comp_cont = 0
+alldat$Comp_cont[alldat$Component == "VT2"] = 1
+alldat$Comp_cont[alldat$Component == "VT3"] = 2
 
 
 # test interactions -------------------------------------------------------
