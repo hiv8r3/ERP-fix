@@ -35,13 +35,14 @@ perf$Condition = paste(perf$faceRace, perf$wordVal, sep = "_")
 perfBias = data.frame(Subject = NULL, perfBias = NULL)
 for (i in unique(perf$Subject)) {
   temp = perf[perf$Subject == i,]
-  a = (temp$avgRT[2] - temp$avgRT[1]) - (temp$avgRT[4] - temp$avgRT[3])
-  b = data.frame(Subject = i, perfBias = a)
+  B = temp$avgRT[2] - temp$avgRT[1]
+  W = temp$avgRT[3] -  temp$avgRT[4]
+  b = data.frame(Subject = i, perfBias = B + W)
   perfBias = rbind(perfBias, b)
 }
 
 plot(perfBias$Subject, perfBias$perfBias)
-hist(perfBias$perfBias, breaks = 20,
+hist(perfBias$perfBias, breaks = 25,
      xlab = "Performance Bias", main = "")
 
 perfBias[order(perfBias$perfBias),]
@@ -139,7 +140,7 @@ ggplot(condense, aes(SubTrial, avgRT, alpha = Condition, color = Condition, shap
   scale_shape_manual(values=c(1,19,1,19)) +
   scale_alpha_manual(values=c(.7,.5,.7,.5)) +
   scale_linetype_manual(values = c("solid", "longdash", "solid", "longdash")) +
-  scale_color_manual(values=c("blue", "blue", "red", "red")) +
+  scale_color_manual(values=c("black", "black", "gray65", "gray65")) +
   theme_bw() +
   scale_y_continuous(limits=c(420,600)) +
   guides(fill=F)
