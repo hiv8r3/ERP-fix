@@ -38,19 +38,8 @@ sort(artdat$numAccept/512)
 
 mean(artdat$numAccept/512) # on average, 85.3% of trials were accepted
 
-# Look at number of artifacts for nose---------------------------------------------
 
-artdat = read.delim("./Analyses with full sample/1 ERP quant data/2 Group time intervals/Eval_NumberOfAcceptedTrials_Nose.txt")
-
-# take out 47 and 61
-artdat = artdat[artdat$Subject != 47 & artdat$Subject != 61,]
-
-artdat[(artdat$numAccept/512 < .25),]
-sort(artdat$numAccept/512)
-
-mean(artdat$numAccept/512) # on average, 76.2% of trials were accepted
-
-# Look at behavioral accuracy (Eval) ---------------------------------------------
+# Look at behavioral accuracy (Cat) ---------------------------------------------
 
 
 catDat = read.delim("./Analyses with full sample/2 Behavioral/catDat.txt")
@@ -87,13 +76,3 @@ sort(artdat$numAccept/256)
 mean(artdat$numAccept/256) # on average, 84.2% of trials were accepted
 
 # Look at number of artifacts for Nose ---------------------------------------------
-
-artdat = read.delim("./Analyses with full sample/1 ERP quant data/2 Group time intervals/Cat_NumberOfAcceptedTrials_Nose.txt")
-
-# take out 66
-artdat = artdat[artdat$Subject != 66,]
-
-artdat[(artdat$numAccept/256 < .25),]
-sort(artdat$numAccept/256)
-
-mean(artdat$numAccept/256) # on average, 75.5% of trials were accepted
