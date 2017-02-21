@@ -30,8 +30,8 @@ summary(m1)
 # sink()
 
 # Maximal model
-m2 = lmer(meanAmp_factor ~ Race_effect+Fix_effect + (Race_effect+Fix_effect|Subject) + (Race*Fix|Electrode), data = VT1)
-summary(m2)
+# m2 = lmer(meanAmp_factor ~ Race_effect+Fix_effect + (Race_effect+Fix_effect|Subject) + (Race*Fix|Electrode), data = VT1)
+# summary(m2)
 
 # sink(file = paste(path, "Model outputs/1.2 VT1_maximalModel.txt", sep=""))
 # "Doesn't converge"
@@ -50,7 +50,15 @@ coef(m3)
 summary(m3a)$AICtab
 sink()
 
+# calculate 95% CI intervals and put into table with other components
+CI95 = data.frame(Effect = c("Race", "Fixation"), Component = "VF1", upper = NA, lower = NA)
 
+coef = summary(m3)$coefficients
+CI95$lower[CI95$Effect == "Race"] = coef[2,1] - 2*coef[2,2]
+CI95$lower[CI95$Effect == "Fixation"] = coef[3,1] - 2*coef[3,2]
+
+CI95$upper[CI95$Effect == "Race"] = coef[2,1] + 2*coef[2,2]
+CI95$upper[CI95$Effect == "Fixation"] = coef[3,1] + 2*coef[3,2]
 
 # VT-2 --------------------------------------------------------------------
 
@@ -79,8 +87,8 @@ summary(m1)
 # sink()
 
 # Maximal model
-m2 = lmer(meanAmp_factor ~ Race_effect+Fix_effect + (Race_effect+Fix_effect|Subject) + (Race*Fix|Electrode), data = VT2)
-summary(m2)
+# m2 = lmer(meanAmp_factor ~ Race_effect+Fix_effect + (Race_effect+Fix_effect|Subject) + (Race*Fix|Electrode), data = VT2)
+# summary(m2)
 
 # sink(file = paste(path, "Model outputs/2.2 VT2_maximalModel.txt", sep=""))
 # summary(m2)
@@ -101,7 +109,17 @@ coef(m3)
 summary(m3a)$AICtab
 sink()
 
+# calculate 95% CI for estimates and add to previous table
+CI95temp = data.frame(Effect = c("Race", "Fixation"), Component = "VF2", upper = NA, lower = NA)
 
+coef = summary(m3)$coefficients
+CI95temp$lower[CI95temp$Effect == "Race"] = coef[2,1] - 2*coef[2,2]
+CI95temp$lower[CI95temp$Effect == "Fixation"] = coef[3,1] - 2*coef[3,2]
+
+CI95temp$upper[CI95temp$Effect == "Race"] = coef[2,1] + 2*coef[2,2]
+CI95temp$upper[CI95temp$Effect == "Fixation"] = coef[3,1] + 2*coef[3,2]
+
+CI95 = rbind(CI95, CI95temp)
 
 # VT-3 --------------------------------------------------------------------
 
@@ -130,8 +148,8 @@ summary(m1)
 # sink()
 
 # Maximal model
-m2 = lmer(meanAmp_factor ~ Race_effect+Fix_effect + (Race_effect+Fix_effect|Subject) + (Race*Fix|Electrode), data = VT3)
-summary(m2)
+# m2 = lmer(meanAmp_factor ~ Race_effect+Fix_effect + (Race_effect+Fix_effect|Subject) + (Race*Fix|Electrode), data = VT3)
+# summary(m2)
 
 # sink(file = paste(path, "Model outputs/3.2 VT3_maximalModel.txt", sep=""))
 # summary(m2)
@@ -151,4 +169,19 @@ coef(m3)
 "________________________________________________________________________________________________"
 summary(m3a)$AICtab
 sink()
+
+
+# calculate 95% CI for estimates and add to previous table
+CI95temp = data.frame(Effect = c("Race", "Fixation"), Component = "VF3", upper = NA, lower = NA)
+
+coef = summary(m3)$coefficients
+CI95temp$lower[CI95temp$Effect == "Race"] = coef[2,1] - 2*coef[2,2]
+CI95temp$lower[CI95temp$Effect == "Fixation"] = coef[3,1] - 2*coef[3,2]
+
+CI95temp$upper[CI95temp$Effect == "Race"] = coef[2,1] + 2*coef[2,2]
+CI95temp$upper[CI95temp$Effect == "Fixation"] = coef[3,1] + 2*coef[3,2]
+
+CI95 = rbind(CI95, CI95temp)
+
+write.table(CI95, "./Analyses with full sample/3 PCA/1 Cat task/5 Analyses/Model outputs/4 Cat_95confInt.txt", row.names = F, sep = "\t")
 

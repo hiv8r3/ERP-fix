@@ -42,14 +42,23 @@ m3 = lmer(meanAmp_factor ~ Race_effect+Fix_effect + (Race_effect+Fix_effect|Subj
 summary(m3)
 m3a = lmer(meanAmp_factor ~ Race_effect+Fix_effect + (Race_effect+Fix_effect|Subject) + (1|Electrode), data = VT1, REML= F)
 
-sink(file = "./Analyses with full sample/3 PCA/2 Eval task/5 Analyses/Model outputs/1 VF1_varyingInterceptElectrode_unstand_noBS_effectCoding.txt")
-summary(m3)
-"________________________________________________________________________________________________"
-coef(m3)
-"________________________________________________________________________________________________"
-summary(m3a)$AICtab
-sink()
+# sink(file = "./Analyses with full sample/3 PCA/2 Eval task/5 Analyses/Model outputs/1 VF1_varyingInterceptElectrode_unstand_noBS_effectCoding.txt")
+# summary(m3)
+# "________________________________________________________________________________________________"
+# coef(m3)
+# "________________________________________________________________________________________________"
+# summary(m3a)$AICtab
+# sink()
 
+# calculate 95% CI intervals and put into table with other components
+CI95 = data.frame(Effect = c("Race", "Fixation"), Component = "VF1", upper = NA, lower = NA)
+
+coef = summary(m3)$coefficients
+CI95$lower[CI95$Effect == "Race"] = coef[2,1] - 2*coef[2,2]
+CI95$lower[CI95$Effect == "Fixation"] = coef[3,1] - 2*coef[3,2]
+
+CI95$upper[CI95$Effect == "Race"] = coef[2,1] + 2*coef[2,2]
+CI95$upper[CI95$Effect == "Fixation"] = coef[3,1] + 2*coef[3,2]
 
 
 # VT-2 --------------------------------------------------------------------
@@ -93,14 +102,25 @@ m3 = lmer(meanAmp_factor ~ Race_effect+Fix_effect + (Race_effect+Fix_effect|Subj
 summary(m3)
 m3a = lmer(meanAmp_factor ~ Race_effect+Fix_effect + (Race_effect+Fix_effect|Subject) + (1|Electrode), data = VT2, REML= F)
 
-sink(file = "./Analyses with full sample/3 PCA/2 Eval task/5 Analyses/Model outputs/2 VF2_varyingInterceptElectrode_unstand_noBS_effectCoding.txt")
-summary(m3)
-"________________________________________________________________________________________________"
-coef(m3)
-"________________________________________________________________________________________________"
-summary(m3a)$AICtab
-sink()
+# sink(file = "./Analyses with full sample/3 PCA/2 Eval task/5 Analyses/Model outputs/2 VF2_varyingInterceptElectrode_unstand_noBS_effectCoding.txt")
+# summary(m3)
+# "________________________________________________________________________________________________"
+# coef(m3)
+# "________________________________________________________________________________________________"
+# summary(m3a)$AICtab
+# sink()
 
+# calculate 95% CI for estimates and add to previous table
+CI95temp = data.frame(Effect = c("Race", "Fixation"), Component = "VF2", upper = NA, lower = NA)
+
+coef = summary(m3)$coefficients
+CI95temp$lower[CI95temp$Effect == "Race"] = coef[2,1] - 2*coef[2,2]
+CI95temp$lower[CI95temp$Effect == "Fixation"] = coef[3,1] - 2*coef[3,2]
+
+CI95temp$upper[CI95temp$Effect == "Race"] = coef[2,1] + 2*coef[2,2]
+CI95temp$upper[CI95temp$Effect == "Fixation"] = coef[3,1] + 2*coef[3,2]
+
+CI95 = rbind(CI95, CI95temp)
 
 
 
@@ -145,11 +165,24 @@ m3 = lmer(meanAmp_factor ~ Race_effect+Fix_effect + (Race_effect+Fix_effect|Subj
 summary(m3)
 m3a = lmer(meanAmp_factor ~ Race_effect+Fix_effect + (Race_effect+Fix_effect|Subject) + (1|Electrode), data = VT3, REML= F)
 
-sink(file = "./Analyses with full sample/3 PCA/2 Eval task/5 Analyses/Model outputs/3 VF3_varyingInterceptElectrode_unstand_noBS_effectCoding.txt")
-summary(m3)
-"________________________________________________________________________________________________"
-coef(m3)
-"________________________________________________________________________________________________"
-summary(m3a)$AICtab
-sink()
+# sink(file = "./Analyses with full sample/3 PCA/2 Eval task/5 Analyses/Model outputs/3 VF3_varyingInterceptElectrode_unstand_noBS_effectCoding.txt")
+# summary(m3)
+# "________________________________________________________________________________________________"
+# coef(m3)
+# "________________________________________________________________________________________________"
+# summary(m3a)$AICtab
+# sink()
 
+# calculate 95% CI for estimates and add to previous table
+CI95temp = data.frame(Effect = c("Race", "Fixation"), Component = "VF3", upper = NA, lower = NA)
+
+coef = summary(m3)$coefficients
+CI95temp$lower[CI95temp$Effect == "Race"] = coef[2,1] - 2*coef[2,2]
+CI95temp$lower[CI95temp$Effect == "Fixation"] = coef[3,1] - 2*coef[3,2]
+
+CI95temp$upper[CI95temp$Effect == "Race"] = coef[2,1] + 2*coef[2,2]
+CI95temp$upper[CI95temp$Effect == "Fixation"] = coef[3,1] + 2*coef[3,2]
+
+CI95 = rbind(CI95, CI95temp)
+
+write.table(CI95, "./Analyses with full sample/3 PCA/2 Eval task/5 Analyses/Model outputs/4 Eval_95confInt.txt", row.names = F, sep = "\t")
