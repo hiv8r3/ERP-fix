@@ -67,8 +67,8 @@ ggplot(corTrials, aes(faceRace, TargetWord.RT, fill = wordVal)) +
         legend.title = element_blank(),
         legend.text = element_text(size=16),
         strip.text = element_text(size=20),
-        axis.text.x = element_text(size=16),
-        axis.text.y = element_text(size=14)) +
+        axis.text.x = element_text(size=18),
+        axis.text.y = element_text(size=16)) +
   scale_fill_manual(values=c("grey55", "grey75"))
 
 ggsave("./Analyses with full sample/2 Behavioral/Figures/Eval task (RT)_v2.png", height = 7, width = 9, unit="in")

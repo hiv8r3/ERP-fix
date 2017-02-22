@@ -42,17 +42,17 @@ corTrials$Fixation = corTrials$FixArea
 ggplot(corTrials, aes(faceRace, TargetFace.RT, fill = Fixation)) +
   stat_summary(fun.y = mean, geom = "bar", position = "dodge") +
   stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=.9), width = .2) +
-  coord_cartesian(ylim=c(435, 490)) +
+  coord_cartesian(ylim=c(435, 470)) +
   labs(x="Race of face prime", y="Reaction Time (ms)") +
   theme_bw() +
   theme(axis.title.x = element_text(size=20), 
         axis.title.y = element_text(size=20),
         legend.title = element_blank(),
         legend.text = element_text(size=16),
-        strip.text = element_text(size=18),
-        axis.text.x = element_text(size=16),
-        axis.text.y = element_text(size=14)) +
-  scale_fill_manual(values=c("grey40", "grey55"))
+        strip.text = element_text(size=20),
+        axis.text.x = element_text(size=18),
+        axis.text.y = element_text(size=16)) +
+  scale_fill_manual(values=c("black", "grey50"))
 
 ggsave("./Analyses with full sample/2 Behavioral/Figures/Cat task (RT)_v2.png", height = 7, width = 6.2, unit="in")
 
